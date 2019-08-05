@@ -1,0 +1,23 @@
+{
+  "name": "Gerant",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "telephone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pharmacies": {
+      "type": "hasMany",
+      "model": "Pharmacie",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Pharmacie",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "localisation": {
+      "type": "geopoint",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stocks": {
+      "type": "hasMany",
+      "model": "Stock",
+      "foreignKey": ""
+    },
+    "gerant": {
+      "type": "belongsTo",
+      "model": "Gerant",
+      "foreignKey": ""
+    },
+    "medicaments": {
+      "type": "hasMany",
+      "model": "Medicament",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Stock"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

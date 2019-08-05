@@ -1,0 +1,30 @@
+{
+  "name": "Stock",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "quantite": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "medicament": {
+      "type": "belongsTo",
+      "model": "Medicament",
+      "foreignKey": ""
+    },
+    "pharmacie": {
+      "type": "belongsTo",
+      "model": "Pharmacie",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

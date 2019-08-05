@@ -1,0 +1,40 @@
+{
+  "name": "Medicament",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stocks": {
+      "type": "hasMany",
+      "model": "Stock",
+      "foreignKey": ""
+    },
+    "pharmacies": {
+      "type": "hasMany",
+      "model": "Pharmacie",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Stock"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
